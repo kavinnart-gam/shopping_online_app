@@ -10,7 +10,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    if (Provider.of<HomeProvider>(context, listen: false).productSelected.isEmpty) {
+    // fetch data when productList is empty
+    if (Provider.of<HomeProvider>(context, listen: false).productList == null) {
       Provider.of<HomeProvider>(context, listen: false).fetchData();
     }
 

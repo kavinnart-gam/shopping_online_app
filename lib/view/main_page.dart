@@ -11,9 +11,9 @@ class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 
   static const List<Widget> _pages = <Widget>[
-    HomePage(),
-    SavedPage(),
-    CartPage(),
+    HomePage(), // selectedIndex is 0
+    SavedPage(), // selectedIndex is 1
+    CartPage(), // selectedIndex is 2
   ];
 
   @override

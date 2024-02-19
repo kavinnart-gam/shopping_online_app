@@ -14,3 +14,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Run project
+flutter pub get
+flutter run
+
+## gitHub
+
+https://github.com/kavinnart-gam/shopping_online_app.git

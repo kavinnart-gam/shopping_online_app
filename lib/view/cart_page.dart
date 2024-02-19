@@ -41,8 +41,7 @@ class CartPage extends StatelessWidget {
                             extentRatio: 0.27,
                             children: [
                               SlidableAction(
-                                onPressed: (context) {
-                                  print(context);
+                                onPressed: (_) {
                                   provider.removeCartProduct(provider.productCartList[index].id);
                                 },
                                 backgroundColor: Colors.red,
@@ -153,7 +152,6 @@ class CartPage extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => const CheckoutPage(),
                             ));
-                        // Provider.of<HomeProvider>(context, listen: false).addToCart(productItem);
                       },
                       style: ElevatedButton.styleFrom(
                         side: const BorderSide(color: Colors.black),

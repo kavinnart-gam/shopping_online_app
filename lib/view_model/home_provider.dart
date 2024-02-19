@@ -45,7 +45,9 @@ class HomeProvider extends ChangeNotifier {
   }
 
   void addToCart(ProductItem productItem) {
-    productCartList.add(productItem);
+    if (productCartList.indexWhere((item) => item.id == productItem.id) == -1) {
+      productCartList.add(productItem);
+    }
     notifyListeners();
   }
 

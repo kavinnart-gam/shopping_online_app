@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_online_app/view/checkout_page.dart';
 
 import '../view_model/home_provider.dart';
 
@@ -136,13 +137,45 @@ class CartPage extends StatelessWidget {
                                 )
                               ],
                             ),
-                          )
-
-                          // ListTile(title: Text(provider.productCartList[index].name)),
-                          );
+                          ));
                     }),
               ),
-              Text("Total ${provider.getTotalPrice()}")
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Total: \$${provider.getTotalPrice()}"),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CheckoutPage(),
+                            ));
+                        // Provider.of<HomeProvider>(context, listen: false).addToCart(productItem);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        side: const BorderSide(color: Colors.black),
+                        padding: const EdgeInsets.all(15),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 18, fontFamily: 'Sarabun', height: 1.4),
+                      ),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Checkout",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           );
         }),
